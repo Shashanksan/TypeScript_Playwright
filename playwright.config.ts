@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
+import { on } from 'events';
 
 /**
  * Read environment variables from file.
@@ -39,6 +40,8 @@ export default defineConfig({
     use: {
       ...devices['Desktop Chrome'],
       channel: 'chrome',
+      screenshot: "on",
+      video:"on",
     },
   },
 ]
