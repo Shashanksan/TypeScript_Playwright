@@ -13,6 +13,7 @@ import { on } from 'events';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  type: "module",
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -31,6 +32,11 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+     launchOptions: {
+      args: ['--start-maximized'],
+    },
+    // 2. Disable the default viewport so the page expands to the window size
+    viewport: null,
   },
 
   /* Configure projects for major browsers */

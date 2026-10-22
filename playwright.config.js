@@ -25,6 +25,11 @@ exports.default = (0, test_1.defineConfig)({
     reporter: 'html',
     /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
     use: {
+        launchOptions: {
+      args: ['--start-maximized'],
+    },
+    // 2. Disable the default viewport so the page expands to the window size
+    viewport: null,
         /* Base URL to use in actions like `await page.goto('')`. */
         // baseURL: 'http://localhost:3000',
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
